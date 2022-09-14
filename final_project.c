@@ -139,50 +139,7 @@ int main(void)
 			 
     }
 	}
-	void Get_cash(void)
-	{
-				FILE* mo;
-		mo = fopen("mon.txt", "rb");
-		int summoney =0 ; 
-		
-		int money ; 
-		printf("please enter the money you need to deposit ...\n\n");
-		scanf("%d",&money);
-		
-		 fwrite(&money,sizeof(money),1,mo);
-		 if(fread(&summoney,sizeof(summoney),1,mo)<money)
-		 {
-			 printf("you dont have enouph money \n\n");
-			 
-		 }
-		 else
-		 {
-            summoney = summoney -money;
-        printf("your total money is....%d \n\n",summoney);
-		 fwrite(&summoney,sizeof(summoney),1,mo);
-		getch();
-		 }
-		
-		
-		
-	}
-	void deposit (void)
-	{
-		
-		FILE* mo;
-		mo = fopen("mon.txt", "rb");
-		int summoney =0 ; 
-		
-		int money ; 
-		printf("please enter the money you need to deposit ...\n\n");
-		scanf("%d",&money);
-		 fwrite(&money,sizeof(money),1,mo);
-            summoney = summoney +money;
-        printf("your total money is.... %d\n\n",summoney);
-		fwrite(&summoney,sizeof(summoney),1,mo);
-		getch();
-		
-	}
+
 		
  
 void account(void)
@@ -707,7 +664,50 @@ void logout(void)
     getch();
 }
 	
-	
+		void Get_cash(void)
+	{
+				FILE* mo;
+		mo = fopen("mon.txt", "rb");
+		int summoney =0 ; 
+		
+		int money ; 
+		printf("please enter the money you need to deposit ...\n\n");
+		scanf("%d",&money);
+		
+		 fwrite(&money,sizeof(money),1,mo);
+		 if(fread(&summoney,sizeof(summoney),1,mo)<money)
+		 {
+			 printf("you dont have enouph money \n\n");
+			 
+		 }
+		 else
+		 {
+            summoney = summoney -money;
+        printf("your total money is....%d \n\n",summoney);
+		 fwrite(&summoney,sizeof(summoney),1,mo);
+		getch();
+		 }
+		
+		
+		
+	}
+	void deposit (void)
+	{
+		
+		FILE* mo;
+		mo = fopen("mon.txt", "rb");
+		int summoney =0 ; 
+		
+		int money ; 
+		printf("please enter the money you need to deposit ...\n\n");
+		scanf("%d",&money);
+		 fwrite(&money,sizeof(money),1,mo);
+            summoney = summoney +money;
+        printf("your total money is.... %d\n\n",summoney);
+		fwrite(&summoney,sizeof(summoney),1,mo);
+		getch();
+		
+	}
 	
 	
 	
